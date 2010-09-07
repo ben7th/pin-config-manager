@@ -22,6 +22,6 @@ production:
   encoding: utf8
   database: config_manager_0531
   username: root
-  password: m1ndp1n/^^
+  password: root
   pool: 5
   timeout: 5000
