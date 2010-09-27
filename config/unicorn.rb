@@ -10,8 +10,8 @@ preload_app true
 timeout 30
 listen '/web/2010/sockets/unicorn-config-manager.sock', :backlog => 2048
 
-pid_file = "/web/2010/pids/unicorn-config-manager.pid"
-pid pid_file
+pid_file_name = "/web/2010/pids/unicorn-config-manager.pid"
+pid pid_file_name
 
 # REE GC
 if GC.respond_to?(:copy_on_write_friendly=)
@@ -19,7 +19,7 @@ if GC.respond_to?(:copy_on_write_friendly=)
 end
 
 before_fork do |server, worker|
-  old_pid = RAILS_ROOT + '/tmp/pids/unicorn.pid.oldbin'
+  old_pid = pid_file_name + '.oldbin'
   if File.exists?(old_pid) && server.pid != old_pid
     begin
       Process.kill("QUIT", File.read(old_pid).to_i)
