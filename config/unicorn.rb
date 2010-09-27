@@ -2,7 +2,7 @@
 worker_processes 3
 
 # 日志位置
-stderr_path("/web/2010/logs/unicorn-config-manager_error.log")
+stderr_path("/web/2010/logs/unicorn-config-manager-error.log")
 stdout_path("/web/2010/logs/unicorn-config-manager.log")
 
 # 加载 超时设置 监听
