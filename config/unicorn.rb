@@ -28,5 +28,4 @@ end
 
 after_fork do |server, worker|
   ActiveRecord::Base.establish_connection
-  CHIMNEY.client.connect_to_server
 end
