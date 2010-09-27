@@ -8,7 +8,7 @@ stdout_path("/web/2010/logs/unicorn-config-manager.log")
 # 加载 超时设置 监听
 preload_app true
 timeout 30
-listen '/web/2010/sockets/unicorn_config_manager.sock', :backlog => 2048
+listen '/web/2010/sockets/unicorn-config-manager.sock', :backlog => 2048
 
 # REE GC
 if GC.respond_to?(:copy_on_write_friendly=)
