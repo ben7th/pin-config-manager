@@ -10,6 +10,9 @@ preload_app true
 timeout 30
 listen '/web/2010/sockets/unicorn-config-manager.sock', :backlog => 2048
 
+pid_file = "/web/2010/pids/unicorn-config-manager.pid"
+pid pid_file
+
 # REE GC
 if GC.respond_to?(:copy_on_write_friendly=)
   GC.copy_on_write_friendly = true
